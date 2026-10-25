@@ -168,6 +168,7 @@
   .wie h3 { font-family: var(--serif); font-size: 21px; font-weight: 600; margin: 0; }
   .wie .lid p { font-size: 16px; color: #3A3732; margin: 0; }
   .wie .lid .rol { font-size: 15px; font-weight: 500; color: var(--goud); margin: 2px 0 8px; }
+  .wie .lid .rol a { color: inherit; text-underline-offset: 3px; }
 
   /* contact */
   .contact { padding: 50px 0 100px; }
