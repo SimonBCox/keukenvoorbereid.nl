@@ -60,7 +60,7 @@
   /* kop */
   header.kop { padding: 22px 0; }
   header.kop .binnen { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-  header.kop img { height: 46px; width: auto; }
+  header.kop img { height: 64px; width: auto; }
   nav.menu { display: flex; gap: 28px; font-size: 15.5px; font-weight: 500; }
   nav.menu a { text-decoration: none; }
   nav.menu a:hover { text-decoration: underline; }
@@ -226,7 +226,7 @@
   @media (max-width: 860px) {
     body { font-size: 17px; }
     nav.menu { display: none; }
-    header.kop img { height: 38px; }
+    header.kop img { height: 46px; }
     header.kop .tel { font-weight: 500; font-size: 15px; text-decoration: none; }
     .opening { padding: 0 0 56px; }
     .opening .binnen, .wand .raster, .werk .raster,
