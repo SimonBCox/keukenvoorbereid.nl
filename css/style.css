@@ -152,6 +152,16 @@
   .begin .zaken { border-left: 1px solid var(--lijn); padding-left: clamp(20px, 3vw, 44px); }
   .ph { font-family: var(--mono); font-size: .8em; background: #F0E3C8; padding: 1px 5px; border-radius: 2px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 
+  /* wie we zijn: de enige plek met namen, de lopende tekst blijft wij */
+  .wie { padding: 40px 0 40px; }
+  .wie h2 { margin-bottom: 28px; }
+  .wie .team { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); }
+  .wie .lid { display: grid; grid-template-columns: 120px 1fr; gap: 20px; align-items: start; }
+  .wie .lid img { width: 120px; height: 120px; object-fit: cover; }
+  .wie h3 { font-family: var(--serif); font-size: 21px; font-weight: 600; margin: 0; }
+  .wie .lid p { font-size: 16px; color: #3A3732; margin: 0; }
+  .wie .lid .rol { font-family: var(--mono); font-size: 13px; letter-spacing: .04em; color: var(--goud); margin: 2px 0 8px; }
+
   /* contact */
   .contact { padding: 50px 0 100px; }
   .contact .vlak {
@@ -248,6 +258,9 @@
     .muur .fotos { gap: 10px; }
     .begin { padding-top: 60px; }
     .begin .zaken { border-left: 0; border-top: 1px solid var(--lijn); padding: 28px 0 0; }
+    .wie .team { grid-template-columns: 1fr; }
+    .wie .lid { grid-template-columns: 88px 1fr; gap: 16px; }
+    .wie .lid img { width: 88px; height: 88px; }
     form { grid-template-columns: 1fr; }
   }
   @media (min-width: 861px) { header.kop .tel { display: none; } }
