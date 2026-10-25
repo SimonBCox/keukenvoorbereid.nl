@@ -1,0 +1,14 @@
+# Interne stukken en ruw beeldmateriaal blijven buiten de publieke repo
+beeldmateriaal/
+overleg/
+ontwerpwedstrijd/
+BRONNEN.md
+CONCURRENTIE.md
+GROEPENREGELS.md
+VINDBAARHEID.md
+WERKWIJZE.md
+inloggegevens*
+*login*.jpeg
+*login*.jpg
+*login*.png
+README.md
