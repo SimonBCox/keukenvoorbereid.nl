@@ -210,6 +210,9 @@
   .tekening text { font-family: var(--mono); font-size: 11px; fill: var(--grijs); }
   .tekening text.sterk { fill: var(--inkt); }
   .tekening text.goud { fill: var(--goud); }
+  .legenda { list-style: none; margin: 12px 0 0; padding: 12px 0 0; border-top: 1px solid var(--lijn); display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 4px 16px; font-family: var(--mono); font-size: 12.5px; line-height: 1.5; color: var(--grijs); }
+  .legenda li { display: grid; grid-template-columns: 2.4em 1fr; }
+  .legenda b { font-weight: 400; color: var(--goud); }
 
   .vragen { padding: 84px 0; background: var(--gips); }
   .vragen h2 { margin-bottom: 32px; }
