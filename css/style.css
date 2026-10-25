@@ -78,9 +78,21 @@
   }
   .knop:hover { background: var(--goud); color: var(--kalk); }
   .knop small { display: block; font-size: 13px; font-weight: 400; opacity: .7; }
-  .knop.wa { display: inline-flex; align-items: center; gap: 14px; }
-  .knop.wa .ico { width: 26px; height: 26px; flex: none; color: #25D366; }
-  .knop.wa:hover .ico { color: var(--kalk); }
+  /* WhatsApp: pil met het logo in een groene schijf */
+  .knop.wa {
+    display: inline-flex; align-items: center; gap: 16px;
+    padding: 10px 28px 10px 10px; border-radius: 999px;
+    font-size: 17px; font-weight: 600; line-height: 1.2;
+    box-shadow: 0 1px 0 rgba(0,0,0,.08), 0 10px 24px -12px rgba(33,31,28,.55);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .knop.wa .ico {
+    width: 46px; height: 46px; padding: 11px; box-sizing: border-box; flex: none;
+    border-radius: 50%; background: #25D366; color: #fff;
+  }
+  .knop.wa small { font-size: 14px; letter-spacing: .02em; margin-top: 3px; }
+  .knop.wa:hover { background: var(--inkt); transform: translateY(-2px); box-shadow: 0 1px 0 rgba(0,0,0,.08), 0 16px 30px -12px rgba(33,31,28,.6); }
+  @media (max-width: 480px) { .knop.wa { border-radius: 32px; font-size: 16px; } }
   .wa-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
   .wa-link .ico { width: 18px; height: 18px; flex: none; color: #1FA855; }
 
@@ -240,7 +252,7 @@
     body { font-size: 17px; }
     nav.menu { display: none; }
     header.kop img { height: 46px; }
-    header.kop .tel { font-weight: 500; font-size: 15px; text-decoration: none; }
+    header.kop .tel { font-weight: 500; font-size: 15px; text-decoration: none; white-space: nowrap; }
     .opening { padding: 0 0 56px; }
     .opening .binnen, .wand .raster, .werk .raster,
     .verzoek .raster, .muur .raster, .begin .raster, .contact .vlak,
