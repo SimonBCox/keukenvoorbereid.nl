@@ -83,6 +83,11 @@
   }
   .knop:hover { background: var(--goud); color: var(--kalk); }
   .knop small { display: block; font-size: 13px; font-weight: 400; opacity: .7; }
+  .knop.wa { display: inline-flex; align-items: center; gap: 14px; }
+  .knop.wa .ico { width: 26px; height: 26px; flex: none; color: #25D366; }
+  .knop.wa:hover .ico { color: var(--kalk); }
+  .wa-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+  .wa-link .ico { width: 18px; height: 18px; flex: none; color: #1FA855; }
 
   /* de wand tijdens het werk */
   .wand { padding: 84px 0; border-top: 1px solid var(--lijn); }
