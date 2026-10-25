@@ -2,8 +2,9 @@
 
 Zelfde opbouw als website/draagmuurkoning.nl/images/logo/bouw_logo.py: letters als
 omtrekken uit Poppins SemiBold, het tweede woord in goud, een gouden teken boven de
-laatste letter (hier een druppel in plaats van de kroon) en een onderregel in Poppins
-Medium met gouden lijntjes ernaast.
+woord en een onderregel in Poppins Medium met gouden lijntjes ernaast. Waar de kroon
+boven de laatste letter staat, is de druppel hier de punt op de i (25-10, variant C
+uit het keuzeblad; tot die dag stond hij boven de d, naast de gewone i-punt).
 """
 
 import sys
@@ -18,7 +19,8 @@ DOEL = Path(sys.argv[2])
 DOEL.mkdir(parents=True, exist_ok=True)
 
 WOORD_DONKER = "Keuken"
-WOORD_GOUD = "voorbereid"
+# Met een puntloze i (U+0131): de druppel neemt de plaats van de punt in.
+WOORD_GOUD = "voorbereıd"
 ONDERREGEL = "SPECIALIST IN KEUKENVERBOUWING"
 
 CAP = 100.0
@@ -53,6 +55,16 @@ class Zetter:
     def grenzen(self, teken):
         g = self.font["glyf"][self.cmap[ord(teken)]]
         return g.xMin, g.xMax, g.yMax
+
+    def punt_onder(self, teken="i"):
+        """Onderkant van de hoogste contour van een teken, voor de i de punt."""
+        tabel = self.font["glyf"]
+        coords, eind, _ = tabel[self.cmap[ord(teken)]].getCoordinates(tabel)
+        contouren, begin = [], 0
+        for e in eind:
+            contouren.append(coords[begin:e + 1])
+            begin = e + 1
+        return max(min(y for _, y in c) for c in contouren)
 
     def zet(self, tekst, spatie_em=0.0):
         paden, x, posities = [], 0.0, []
@@ -98,17 +110,16 @@ def bouw(met_onderregel=True):
     breedte_woord = (br_donker + br_goud) * S
     staart = woord.desc * S
 
-    # De d heeft een stok, dus de druppel komt boven de stokhoogte en niet op de
-    # x-hoogte zoals de kroon boven de g. Boven het midden van de stok, zoals de
-    # kroon aan de rechterkant van de g zit; zo blijft hij weg van de punt op de i.
-    d_xmin, d_xmax, d_ymax = woord.grenzen("d")
-    l_xmin, l_xmax, _ = woord.grenzen("l")
-    stok_breedte = l_xmax - l_xmin
+    # De druppel staat op de puntloze i, met zijn onderkant waar de i-punt begon,
+    # en is even groot als toen hij boven de d stond. Hij steekt boven de stok van
+    # de d uit; de ruimte boven het woord volgt uit wat het hoogst komt.
+    i_xmin, i_xmax, _ = woord.grenzen("ı")
+    _, _, d_ymax = woord.grenzen("d")
     stok = d_ymax * S
+    druppel_onder = woord.punt_onder("i") * S
     druppel_b = CAP * 0.30
     druppel_h = CAP * 0.44
-    gat = CAP * 0.05
-    boven = druppel_h + gat + max(0.0, stok - CAP)
+    boven = max(druppel_onder + druppel_h, stok) - CAP
 
     pad_regel, br_regel_font, _ = regel.zet(ONDERREGEL, REGEL_SPATIE)
     S_regel = (REGEL_BREEDTE * breedte_woord) / br_regel_font
@@ -125,9 +136,9 @@ def bouw(met_onderregel=True):
     breedte = breedte_woord + 2 * MARGE
     x_woord = MARGE
 
-    x_d = x_woord + (br_donker + pos_goud[-1]) * S
-    cx = x_d + (d_xmax - stok_breedte / 2) * S
-    druppel = druppelpad(cx, basislijn - stok - gat, druppel_b, druppel_h)
+    x_i = x_woord + (br_donker + pos_goud[-2]) * S
+    cx = x_i + (i_xmin + i_xmax) / 2 * S
+    druppel = druppelpad(cx, basislijn - druppel_onder, druppel_b, druppel_h)
 
     stam = "logo_kv" if met_onderregel else "logo_kv_wordmerk"
     for naam_kleur, (tekst_kleur, goud_kleur) in KLEUREN.items():
