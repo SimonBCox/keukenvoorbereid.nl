@@ -59,6 +59,18 @@
   nav.menu { display: flex; gap: 28px; font-size: 15.5px; font-weight: 500; }
   nav.menu a { text-decoration: none; }
   nav.menu a:hover { text-decoration: underline; }
+  /* op de telefoon: WhatsApp en bellen als twee ronde knoppen */
+  .kop-contact { display: flex; gap: 8px; flex: none; }
+  .kop-contact .rond {
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 50%; text-decoration: none;
+  }
+  .kop-contact .rond svg { width: 21px; height: 21px; }
+  .kop-contact .wa { background: #25D366; color: #fff; }
+  .kop-contact .bel { border: 1.5px solid var(--goud); color: var(--inkt); }
+  .kop-contact .bel svg { width: 19px; height: 19px; }
+  .kop-contact .rond:hover { color: inherit; }
+  .kop-contact .wa:hover { color: #fff; }
 
   /* opening */
   .opening { padding: 24px 0 84px; }
@@ -253,7 +265,7 @@
     body { font-size: 17px; }
     nav.menu { display: none; }
     header.kop img { height: 46px; }
-    header.kop .tel { font-weight: 500; font-size: 15px; text-decoration: none; white-space: nowrap; }
+    header.kop .binnen { gap: 12px; }
     .opening { padding: 0 0 56px; }
     .opening .binnen, .wand .raster, .werk .raster,
     .verzoek .raster, .muur .raster, .begin .raster, .contact .vlak,
@@ -271,4 +283,4 @@
     .wie .lid img { width: 88px; height: 88px; }
     form { grid-template-columns: 1fr; }
   }
-  @media (min-width: 861px) { header.kop .tel { display: none; } }
+  @media (min-width: 861px) { header.kop .kop-contact { display: none; } }
