@@ -251,6 +251,38 @@
   .vragen p { margin: 0; font-size: 16.5px; color: #3A3732; max-width: 52ch; }
   .vragen p.bron { margin-top: 36px; max-width: none; color: var(--grijs); }
 
+  /* groepenplanner: een div en geen form, want form is hier een raster van twee kolommen */
+  .planner { background: var(--gips); padding: 84px 0; }
+  .planner .kopregel { margin-bottom: 36px; }
+  .planner .kopregel h2 { margin-bottom: 14px; }
+  .planner .kopregel p:not(.maat) { max-width: 54ch; margin: 0; color: #3A3732; }
+  .planner .raster { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+  .keuze fieldset { border: 0; margin: 0 0 28px; padding: 0; min-width: 0; }
+  .keuze legend { padding: 0; margin-bottom: 10px; font-size: 12.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--goud); }
+  .keuze .opties { border-top: 1px solid var(--inkt); }
+  .keuze .twee { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+  .keuze label.optie {
+    display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start;
+    margin: 0; padding: 12px 0; border-bottom: 1px solid var(--lijn);
+    font-size: 16.5px; font-weight: 400; line-height: 1.45; color: var(--inkt); cursor: pointer;
+  }
+  .keuze label.optie small { display: block; font-size: 14px; color: var(--grijs); }
+  .keuze .optie input { width: 18px; height: 18px; margin: 2px 0 0; padding: 0; accent-color: var(--goud); cursor: pointer; }
+  .keuze .optie input:disabled + span { color: var(--grijs); opacity: .6; }
+  .keuze .optie input:focus { outline: 2px solid var(--goud); outline-offset: 2px; }
+  .uitkomst { background: var(--papier); border-top: 2px solid var(--goud); padding: 24px 26px 26px; position: sticky; top: 20px; }
+  .uitkomst .getal { font-family: var(--serif); font-size: clamp(40px, 4.4vw, 54px); font-weight: 600; line-height: 1; margin: 0 0 6px; }
+  .uitkomst .sub { font-size: 15px; color: var(--grijs); margin-bottom: 16px; }
+  ol.groepen { list-style: none; margin: 0 0 16px; padding: 0; counter-reset: groep; border-top: 1px solid var(--inkt); }
+  ol.groepen li {
+    counter-increment: groep; display: grid; grid-template-columns: 32px 1fr;
+    padding: 8px 0; border-bottom: 1px solid var(--lijn); font-size: 16px; line-height: 1.45;
+  }
+  ol.groepen li::before { content: counter(groep); font-size: 14px; font-weight: 600; color: var(--goud); padding-top: 1px; }
+  .uitkomst .opmerking { font-size: 15px; line-height: 1.55; color: #3A3732; margin: 0 0 10px; }
+  .uitkomst .opmerking.let { color: var(--inkt); border-left: 2px solid var(--goud); padding-left: 12px; }
+  .uitkomst .opmerking.klein { font-size: 13.5px; color: var(--grijs); margin: 14px 0 0; }
+
   /* voet */
   footer { border-top: 1px solid var(--lijn); padding: 36px 0 48px; }
   footer .binnen { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; }
@@ -269,8 +301,9 @@
     .opening { padding: 0 0 56px; }
     .opening .binnen, .wand .raster, .werk .raster,
     .verzoek .raster, .muur .raster, .begin .raster, .contact .vlak,
-    .artikel .raster, .vragen .lijst { grid-template-columns: 1fr; }
-    .artikel, .vragen { padding: 60px 0; }
+    .artikel .raster, .vragen .lijst, .planner .raster, .keuze .twee { grid-template-columns: 1fr; }
+    .artikel, .vragen, .planner { padding: 60px 0; }
+    .uitkomst { position: static; }
     .opening figure { order: -1; margin: 0 calc(var(--rand) * -1); }
     .opening figcaption { padding: 0 var(--rand); }
     .opening .intro { font-size: 18px; }
@@ -284,3 +317,9 @@
     form { grid-template-columns: 1fr; }
   }
   @media (min-width: 861px) { header.kop .kop-contact { display: none; } }
+  /* Op een telefoon mag de eerste kolom van een tabel afbreken, op een &shy; in het
+     woord; anders scrollt een tabel met drie kolommen zijwaarts (groepen-keuken). */
+  @media (max-width: 560px) {
+    .tabel tbody th { white-space: normal; }
+    .tabel th, .tabel td { padding-right: 12px; }
+  }

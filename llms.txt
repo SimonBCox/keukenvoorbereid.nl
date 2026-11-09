@@ -38,6 +38,7 @@ standbouw (een omkasting waar de keukenzaak de keuken in zet).
   ruimte onder het blad voor het reservoir.
 - Van gas naar inductie: eigen groepen voor de kookplaat, vaak een nieuwe meterkast
   en soms de netbeheerder voor een zwaardere aansluiting.
+  Hoeveel groepen een keuken in totaal vraagt: https://www.keukenvoorbereid.nl/groepen-keuken/
 - De muur eruit: eerst de berekening en de stalen balk, door dezelfde ploeg.
 - Een IKEA-keuken: de oude keuken weg en de punten op de definitieve plek, want de
   monteur maakt geen muren of vloeren open.
@@ -83,6 +84,8 @@ offerte van de keukenzaak.
 - https://www.keukenvoorbereid.nl/quooker-aansluiten/ : wat er voor een Quooker in het spoelkastje moet zitten: koud water, hoekstopkraan, stopcontact en de vrije zone onder het blad
 - https://www.keukenvoorbereid.nl/afzuigkap-naar-buiten/ : een afzuigkap naar buiten: de regel uit het Bbl, diameter, de spouw, terugslagklep, mechanische ventilatie en toestemming
 - https://www.keukenvoorbereid.nl/kookeiland/ : water, afvoer en stroom naar een kookeiland: afschot en lengte volgens NEN 3215, kruipruimte of sleuf, eilandkap of afzuiging in de plaat
+- https://www.keukenvoorbereid.nl/van-gas-naar-inductie/ : van een gaskookplaat naar inductie bij een nieuwe keuken: hoeveel groepen de plaat vraagt, wanneer de meterkast of de aansluiting van de netbeheerder zwaarder moet, en het gas eraf in dezelfde klus
+- https://www.keukenvoorbereid.nl/groepen-keuken/ : groepenplanner: vink de apparaten aan en zie hoeveel groepen de keuken in de meterkast vraagt, met de regels van fabrikanten en NEN 1010 en de bron erbij
 - https://www.keukenvoorbereid.nl/werkgebied/ : werkgebied heel Nederland vanuit Andelst in de Betuwe, de plaatsen binnen een half uur en een uur rijden, en wat overal hetzelfde is (leidingschema, vaste prijs, planning vanaf de leverdatum)
 - https://www.keukenvoorbereid.nl/keukenzaken/ : samenwerking met keukenzaken
 
@@ -98,4 +101,4 @@ offerte van de keukenzaak.
 - MAREE Aanneming B.V., de uitvoering (KvK 74031937): https://www.aannemingmaree.nl/
 - Cox Constructieadvies, contact, prijs en constructie (KvK 86134191): https://www.coxadvies.nl/
 
-Bijgewerkt 4 november 2026.
+Bijgewerkt 9 november 2026.
