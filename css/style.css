@@ -105,6 +105,8 @@
   .knop.wa small { font-size: 14px; letter-spacing: .02em; margin-top: 3px; }
   .knop.wa:hover { background: var(--inkt); transform: translateY(-2px); box-shadow: 0 1px 0 rgba(0,0,0,.08), 0 16px 30px -12px rgba(33,31,28,.6); }
   @media (max-width: 480px) { .knop.wa { border-radius: 32px; font-size: 16px; } }
+  .tweede-ingang { margin: 16px 0 0 4px; font-size: 15.5px; color: var(--grijs); }
+  .tweede-ingang a { color: var(--inkt); font-weight: 500; text-decoration-color: var(--goud); text-underline-offset: 3px; }
   .wa-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
   .wa-link .ico { width: 18px; height: 18px; flex: none; color: #1FA855; }
 
@@ -169,6 +171,15 @@
   .begin .raster { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); }
   .begin h2 { margin-bottom: 20px; }
   .begin .zaken { border-left: 1px solid var(--lijn); padding-left: clamp(20px, 3vw, 44px); }
+  /* homepage: hoe het begint direct na de opening, keukenzaken als eigen blok */
+  .start { padding: 84px 0; border-top: 1px solid var(--lijn); }
+  .start .raster { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+  .start h2 { margin-bottom: 22px; }
+  .start .notitie { margin-bottom: 26px; }
+  .start p:not(.maat) { max-width: 46ch; }
+  .zakenblok { padding: 84px 0 40px; border-top: 1px solid var(--lijn); }
+  .zakenblok .raster { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+  .zakenblok p:not(.maat) { max-width: 52ch; }
   .ph { font-size: .85em; background: #F0E3C8; padding: 1px 5px; border-radius: 2px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 
   /* wie we zijn: de enige plek met namen, de lopende tekst blijft wij */
@@ -302,6 +313,7 @@
     .opening { padding: 0 0 56px; }
     .opening .binnen, .wand .raster, .werk .raster,
     .verzoek .raster, .muur .raster, .begin .raster, .contact .vlak,
+    .start .raster, .zakenblok .raster,
     .artikel .raster, .vragen .lijst, .planner .raster, .keuze .twee { grid-template-columns: 1fr; }
     .artikel, .vragen, .planner { padding: 60px 0; }
     .drieluik { grid-template-columns: 1fr; gap: 22px; }
@@ -309,7 +321,9 @@
     .opening figure { order: -1; margin: 0 calc(var(--rand) * -1); }
     .opening figcaption { padding: 0 var(--rand); }
     .opening .intro { font-size: 18px; }
-    .wand, .werk, .verzoek, .muur { padding: 60px 0; }
+    .wand, .werk, .verzoek, .muur, .start { padding: 60px 0; }
+    .zakenblok { padding: 60px 0 30px; }
+    .zakenblok h2 { margin-bottom: 18px; }
     .muur .fotos { gap: 10px; }
     .begin { padding-top: 60px; }
     .begin .zaken { border-left: 0; border-top: 1px solid var(--lijn); padding: 28px 0 0; }
