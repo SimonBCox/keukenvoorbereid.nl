@@ -197,7 +197,7 @@
       if (!matchMedia('(min-width: 861px)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       if (navigator.connection && navigator.connection.saveData) return;
       window.addEventListener('load', function () {
-        v.addEventListener('playing', function () { v.classList.add('speelt'); }, { once: true });
+        v.addEventListener('playing', function () { v.classList.add('speelt'); v.parentNode.classList.add('video-speelt'); }, { once: true });
         v.src = v.getAttribute('data-src');
         var p = v.play();
         if (p && p.catch) p.catch(function () {});
