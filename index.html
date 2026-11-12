@@ -189,6 +189,21 @@
       <source media="(max-width: 860px)" srcset="/images/foto/4_hoge_kasten.jpg 1200w, /images/foto/groot/4_hoge_kasten.jpg 1800w" sizes="100vw" width="1200" height="1600">
       <img src="/images/foto/3_wand_klaar.jpg" srcset="/images/foto/klein/3_wand_klaar.jpg 800w, /images/foto/3_wand_klaar.jpg 1600w, /images/foto/groot/3_wand_klaar.jpg 2400w" sizes="100vw" alt="Een lichte, gestucte keukenruimte met donkere houten kasten tegen de achterwand, een spoelbak onder het raam in een witte omkasting met nissen, en een kookeiland op de voorgrond." width="1600" height="1200" fetchpriority="high">
     </picture>
+    <video class="kopvideo" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="/video/kop.mp4"></video>
+    <script>
+    (function () {
+      var v = document.querySelector('.kopvideo');
+      if (!v || !window.matchMedia) return;
+      if (!matchMedia('(min-width: 861px)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (navigator.connection && navigator.connection.saveData) return;
+      window.addEventListener('load', function () {
+        v.addEventListener('playing', function () { v.classList.add('speelt'); }, { once: true });
+        v.src = v.getAttribute('data-src');
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      });
+    })();
+    </script>
     <div class="binnen">
       <div class="tekst">
         <h1>De keuken koop jij, het voorwerk doen wij.</h1>
