@@ -135,6 +135,7 @@
   .knoppen .tweede { color: rgba(255,255,255,.92); font-size: 15.5px; }
   .knoppen .tweede a { text-decoration-color: var(--op-foto); }
   .knoppen .tweede a:hover { color: #fff; }
+  .zonder-schema { margin-top: 16px; font-size: 15px; color: rgba(255,255,255,.8); }
   .fotonoot { max-width: 300px; margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.78); border-left: 2px solid var(--op-foto); padding-left: 12px; }
   .fotonoot b { color: #fff; font-weight: 600; }
   .alleen-smal { display: none; }
