@@ -17,6 +17,7 @@
     return null;
   }
   function plek(a) {
+    if (a.closest(".appknop")) return "zwevend";
     if (a.closest("header, nav")) return "kop";
     if (a.closest("footer")) return "voet";
     if (a.closest("form, #contact, .contact")) return "contact";
